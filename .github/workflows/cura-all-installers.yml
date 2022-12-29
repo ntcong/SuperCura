@@ -6,7 +6,12 @@ on:
         inputs:
             cura_conan_version:
                 description: 'Cura Conan Version'
-                default: 'cura/latest@ultimaker/testing'
+                default: 'cura/latest@ntcong/testing'
+                required: true
+                type: string
+            curaengine_conan_version:
+                description: 'CuraEngine Conan Version'
+                default: 'curaengine/latest@ntcong/testing'
                 required: true
                 type: string
             conan_args:
@@ -62,6 +67,7 @@ jobs:
             platform: 'windows-2022'
             os_name: 'win64'
             cura_conan_version: ${{ inputs.cura_conan_version }}
+            curaengine_conan_version: ${{ inputs.curaengine_conan_version }}
             conan_args: ${{ inputs.conan_args }}
             conan_config: ${{ inputs.conan_config }}
             enterprise: ${{ inputs.enterprise }}
@@ -76,6 +82,7 @@ jobs:
             platform: 'ubuntu-20.04'
             os_name: 'linux'
             cura_conan_version: ${{ inputs.cura_conan_version }}
+            curaengine_conan_version: ${{ inputs.curaengine_conan_version }}
             conan_args: ${{ inputs.conan_args }}
             conan_config: ${{ inputs.conan_config }}
             enterprise: ${{ inputs.enterprise }}
@@ -90,6 +97,7 @@ jobs:
             platform: 'ubuntu-22.04'
             os_name: 'linux-modern'
             cura_conan_version: ${{ inputs.cura_conan_version }}
+            curaengine_conan_version: ${{ inputs.curaengine_conan_version }}
             conan_args: ${{ inputs.conan_args }}
             conan_config: ${{ inputs.conan_config }}
             enterprise: ${{ inputs.enterprise }}
@@ -104,6 +112,7 @@ jobs:
             platform: 'macos-11'
             os_name: 'mac'
             cura_conan_version: ${{ inputs.cura_conan_version }}
+            curaengine_conan_version: ${{ inputs.curaengine_conan_version }}
             conan_args: ${{ inputs.conan_args }}
             conan_config: ${{ inputs.conan_config }}
             enterprise: ${{ inputs.enterprise }}
